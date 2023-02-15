@@ -18,16 +18,16 @@ export const colorValidator = (value: string) => {
 
 //未暴露，将颜色格式转化为3个Number
 const switchColor = (value: string) => {
-  let tmp: Array<string> = [];
+  let tmp: any;
   let res: Array<number> = [];
   switch (colorValidator(value)) {
     case 0:
       return [];
     case 1:
       //捕获三个数字
-      tmp = /(\d+),(\d+),(\d+)/.exec(value).slice(1, 4);
+      tmp = /(\d+),(\d+),(\d+)/.exec(value)?.slice(1, 4);
       //直接写map(parseInt)会出现NAN
-      res = tmp.map((item, index) => parseInt(item));
+      res = tmp.map((item:any, index:any) => parseInt(item));
       break;
     case 2:
       tmp = /(\w)(\w)(\w)/.exec(value)?.slice(1, 4);

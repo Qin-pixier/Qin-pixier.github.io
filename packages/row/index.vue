@@ -4,7 +4,7 @@
 	</div>
   </template>
   
-  <script>
+  <script lang="ts">
   import { computed, ref,useSlots,h,provide } from 'vue'
   export default {
 	name: 'ysyz-row',
@@ -12,7 +12,7 @@
 	  gutter: Number
 	},
 	setup(props) {
-	  const $slot = useSlots();
+	  const slot = useSlots();
 	  const gutter = computed(() => props.gutter)
 	  provide('gutter',gutter)
 	  return () => [
@@ -21,7 +21,7 @@
 		  {
 			className: 'row-default'
 		  },
-		  $slot.default()
+		  	slot.default && slot.default()
 		)
 	  ]
 	}

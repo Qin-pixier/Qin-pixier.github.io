@@ -21,7 +21,7 @@ import { computed, ref ,watch} from "vue";
 
 const prefix = 'ysyz-page'
 
-const isValueNumber = (value)=>{
+const isValueNumber = (value:any)=>{
     return (/^[1-9][0-9]*$/).test(value + '');
 }
 const props = defineProps({
@@ -65,7 +65,7 @@ const ElevatorClasses = computed(()=>{
 const changeSize = ()=>{
     emit('on-size', currentPageSize);
 }
-const changePage = (event)=>{
+const changePage = (event:any)=>{
     let val = event.target.value.trim();
     let page = 0;
 

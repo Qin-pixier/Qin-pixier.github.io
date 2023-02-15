@@ -1,12 +1,12 @@
 <template>
   <div :class="classes">
-    <div class="ysyz-list-header" v-if="header || this.$slots.header">
+    <div class="ysyz-list-header" v-if="header || mySlot.header">
       <slot name="header">{{ header }}</slot>
     </div>
     <div class="ysyz-list-container">
       <ul class="list-items"><slot></slot></ul>
     </div>
-    <div class="ysyz-list-footer" v-if="footer || this.$slots.footer">
+    <div class="ysyz-list-footer" v-if="footer || mySlot.footer">
       <slot name="footer"></slot>
     </div>
   </div>
@@ -18,9 +18,10 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { computed, provide } from "vue";
+import { computed, provide,useSlots } from "vue";
 import myValidat from "./func";
 provide('ListIn', this)
+const mySlot = useSlots()
 const prefix = "ysyz-list";
 const props = defineProps({
   type: {

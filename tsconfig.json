@@ -8,7 +8,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ESNext", "DOM","es2017","es5","ES2015.Promise","ES2015"],
     "skipLibCheck": true,
     "noEmit": true
   },

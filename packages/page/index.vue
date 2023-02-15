@@ -225,7 +225,7 @@ const lastPageClasses = computed(()=>{
             }
         ];
 })
-const changePage = (page)=>{
+const changePage = (page:any)=>{
     if(currentPage.value != page){
         currentPage.value = page;
         emit('update:current', page)
@@ -266,15 +266,15 @@ const fastNext = ()=>{
         changePage(page);
     }  
 }
-const onSize = (pageSize)=>{
+const onSize = (pageSize:any)=>{
     currentPageSize.value = pageSize;
     emit('on-page-size-change', pageSize);
     changePage(1);
 }
-const onPage = (page)=>{
+const onPage = (page:any)=>{
     changePage(page)
 }
-const keyDown = (e)=>{
+const keyDown = (e:any)=>{
     const key = e.keyCode;
     const condition = (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key === 8 || key === 37 || key === 39;
 
@@ -282,7 +282,7 @@ const keyDown = (e)=>{
         e.preventDefault();
     }
 }
-const keyUp = (e)=>{
+const keyUp = (e:any)=>{
     const key = e.keyCode;
     const val = parseInt(e.target.value);
 

@@ -1,8 +1,5 @@
-import CellGroup from './index.vue';
-
-/* istanbul ignore next */
-CellGroup.install = function(Vue) {
-  Vue.component(CellGroup.name, CellGroup);
-};
-
-export default CellGroup;
+import CellGroup from './index.vue'
+CellGroup.install = (app: { component: any }) =>{
+    app.component(CellGroup.name, CellGroup)
+}
+export default CellGroup

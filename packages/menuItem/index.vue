@@ -76,8 +76,8 @@ const disactiveHandle = () => {
 //父子间通信用
 const activeHorizontal = ref(false); //只对第一级菜单有实际意义。
 let instance = getCurrentInstance();
-let menuNode = null;
-let outNode = null;
+let menuNode:any = null;
+let outNode:any = null;
 const clickItem = () => {
   if (mode === "vertical") menuNode.exposed?.clickItemHandle(props.name);
   else {

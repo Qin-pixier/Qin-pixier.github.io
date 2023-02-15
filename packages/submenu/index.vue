@@ -50,8 +50,8 @@ const props = defineProps({
 });
 
 const mode = inject("mode");
-const titleBox = ref(null);
-const titleBoxHeight = ref(0);
+const titleBox:any = ref(null);
+const titleBoxHeight:any = ref(0);
 const itemStyle = computed(() => {
   if (mode === "vertical") return `padding-left:${padding.value}px`;
   else return "";
@@ -66,9 +66,9 @@ const listStyleFinal = computed(() => {
     listStyle.value
   );
 });
-const list = ref(null);
-const padding = ref(30);
-let height = 0;
+const list:any = ref(null);
+const padding:any = ref(30);
+let height:any = 0;
 const titleClass = computed(() => {
   return [listShow.value ? "ysyz-menu-submenu-title-open" : ""];
 });
@@ -116,23 +116,23 @@ const openListHorizontal = () => {
 
 //子菜单管理
 let instance = getCurrentInstance();
-let outNode = null;
-let rootNode = null;
+let outNode:any = null;
+let rootNode:any = null;
 const accordion = inject("accordion");
-const submenuList = ref<ComponentInternalInstance[]>([]);
-const addSubmenuList = (item: ComponentInternalInstance) => {
+const submenuList:any = ref<ComponentInternalInstance[]>([]);
+const addSubmenuList:any = (item: ComponentInternalInstance) => {
   submenuList.value.push(item);
 };
 
 const clickSubmenuHandle = (name: String, preState: Boolean) => {
   //若preState=true，则先前状态为展开，只需要关闭对应名称的菜单
   if (preState)
-    submenuList.value.forEach((item) => {
+    submenuList.value.forEach((item:any) => {
       if (!item) return;
       if (item?.exposed?.name === name) item?.exposed?.closeList();
     });
   else {
-    submenuList.value.forEach((item) => {
+    submenuList.value.forEach((item:any) => {
       if (!item) return;
       if (item?.exposed?.name === name) item?.exposed?.openList();
       else if (accordion) item?.exposed?.closeList();

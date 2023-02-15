@@ -30,7 +30,7 @@ const cellclass = computed(() => {
 
 //item管理
 const itemList = ref<ComponentInternalInstance[]>([]);
-const addItemList = (item: ComponentInternalInstance) => {
+const addItemList = (item: any) => {
   itemList.value.push(item);
 };
 const clickItemHandle = (name: string) => {

@@ -1,8 +1,5 @@
-import Cell from './index.vue';
-
-/* istanbul ignore next */
-Cell.install = function(Vue) {
-  Vue.component(Cell.name, Cell);
-};
-
-export default Cell;
+import Cell from './index.vue'
+Cell.install = (app: { component: any }) =>{
+    app.component(Cell.name, Cell)
+}
+export default Cell

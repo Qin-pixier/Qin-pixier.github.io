@@ -60,12 +60,12 @@ const menuclass = computed(() => {
 });
 
 //item管理
-const itemList = ref<ComponentInternalInstance[]>([]);
-const addItemList = (item: ComponentInternalInstance) => {
+const itemList:any = ref<ComponentInternalInstance[]>([]);
+const addItemList:any = (item: ComponentInternalInstance) => {
   itemList.value.push(item);
 };
 const clickItemHandle = (name: string) => {
-  itemList.value.forEach((item) => {
+  itemList.value.forEach((item:any) => {
     if (!item) return;
     if (item?.exposed?.name === name) item?.exposed?.activeHandle();
     else item?.exposed?.disactiveHandle();
@@ -74,20 +74,20 @@ const clickItemHandle = (name: string) => {
 };
 
 //折叠子菜单管理--单层
-const submenuList = ref<ComponentInternalInstance[]>([]);
-const addSubmenuList = (item: ComponentInternalInstance) => {
+const submenuList:any = ref<ComponentInternalInstance[]>([]);
+const addSubmenuList:any = (item: ComponentInternalInstance) => {
   submenuList.value.push(item);
 };
 
 const clickSubmenuHandle = (name: String, preState: Boolean) => {
   //若preState=true，则先前状态为展开，只需要关闭对应名称的菜单
   if (preState)
-    submenuList.value.forEach((item) => {
+    submenuList.value.forEach((item:any) => {
       if (!item) return;
       if (item?.exposed?.name === name) item?.exposed?.closeList();
     });
   else {
-    submenuList.value.forEach((item) => {
+    submenuList.value.forEach((item:any) => {
       if (!item) return;
       if (item?.exposed?.name === name) item?.exposed?.openList();
       else if (props.accordion) item?.exposed?.closeList();
@@ -96,8 +96,8 @@ const clickSubmenuHandle = (name: String, preState: Boolean) => {
   }
 };
 //折叠子菜单管理--全部
-const allSubmenuList = ref<ComponentInternalInstance[]>([]);
-const addAllSubmenuList = (item: ComponentInternalInstance) => {
+const allSubmenuList:any = ref<ComponentInternalInstance[]>([]);
+const addAllSubmenuList:any = (item: ComponentInternalInstance) => {
   allSubmenuList.value.push(item);
 };
 
@@ -112,12 +112,12 @@ const ChildrenActiveHandleHorizontal = (
 ) => {
   //前面一个是真正点击的name，后面一个是menu下一级激活，要高亮
   emits("on-select", truename);
-  itemList.value.forEach((element) => {
+  itemList.value.forEach((element:any) => {
     if (element.exposed.name === activename)
       element.exposed.activeHandleHorizontal();
     else element.exposed.disactiveHandleHorizontal();
   });
-  submenuList.value.forEach((element) => {
+  submenuList.value.forEach((element:any) => {
     if (element.exposed.name === activename)
       element.exposed.activeHandleHorizontal();
     else element.exposed.disactiveHandleHorizontal();
@@ -138,14 +138,14 @@ onMounted(() => {
   if (props.mode === "vertical") {
     if (props.defaultActive) clickItemHandle(props.defaultActive);
     if (props.defaultOpen) {
-      allSubmenuList.value.forEach((item) => {
+      allSubmenuList.value.forEach((item:any) => {
         if (props.defaultOpen?.indexOf(item.exposed.name) !== -1)
           item.exposed.listShowHandle();
       });
     }
   } else {
     if (props.defaultActive) {
-      itemList.value.forEach((item) => {
+      itemList.value.forEach((item:any) => {
         if (props.defaultActive === item.exposed.name) item.exposed.clickItem();
       });
     }

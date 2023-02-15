@@ -4,7 +4,7 @@ import { VNode } from "@vue/runtime-core";
 import { h, render, App } from "vue";
 import LoadingBar from "./index.vue";
 
-let loadingBarInstance: VNode;
+let loadingBarInstance: any;
 let remove = () => {};
 const createLoadingBar = () => {
   const container = document.createElement("div"); //创建容器

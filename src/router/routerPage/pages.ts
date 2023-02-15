@@ -34,11 +34,7 @@ export default [
             component: () => import("../../../packages/rowAcol/doc/doc.md"),
           },
 
-          {
-            path: "Layout",
-            name: "Layout",
-            component: () => import("../../../packages/layout/doc/doc.md"),
-          },
+          
           {
             path: "grid",
             name: "Grid",
@@ -109,11 +105,7 @@ export default [
             name: "Page",
             component: () => import("../../../packages/Page/doc/doc.md"),
           },
-          {
-            path: "Tabs",
-            name: "Tabs",
-            component: () => import("../../../packages/tab/doc/doc.md"),
-          },
+          
           {
             path: "Breadcrumb",
             name: "Breadcrumb",
@@ -147,11 +139,7 @@ export default [
             name: "Table",
             component: () => import("../../../packages/table/doc/doc.md"),
           },
-          {
-            path: "datePicker",
-            name: "DatePicker",
-            component: () => import("../../../packages/datePicker/doc/doc.md"),
-          },
+          
           {
             path: "Switch",
             name: "Switch",
@@ -164,11 +152,7 @@ export default [
         redirect: "Progress",
         component: () => import("../../views/HomeClassified.vue"),
         children: [
-          {
-            path: "Progress",
-            name: "Progress",
-            component: () => import("../../../packages/progress/doc/doc.md"),
-          },
+         
         ],
       },
     ],

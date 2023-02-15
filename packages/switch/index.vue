@@ -81,7 +81,7 @@ const classes = computed(()=>{
     ]
 })
 const styles= computed(()=>{
-    let style = {}
+    let style:any = {}
     if(props.trueColor && currentValue.value === props.trueValue)
     {
         style['border-color'] = props.trueColor;
@@ -99,7 +99,7 @@ const handleToggle = ()=>{
 
     currentValue.value = checked;
 }
-const toggle = (event)=>{
+const toggle = (event:any)=>{
     event.preventDefault();
     if(props.disabled || props.loading){
         return false

@@ -1,9 +1,9 @@
 <template>
     <li class="ysyz-list-item" :class="classes">
-        <template v-if="itemLayout === 'vertical' && this.$slots.extra">
+        <template v-if="itemLayout === 'vertical' && mySlot.extra">
             <div class="ysyz-list-item-main">
                 <slot></slot>
-                <ul class="ysyz-list-item-action" v-if="this.$slots.action">
+                <ul class="ysyz-list-item-action" v-if="mySlot.action">
                     <slot name="action"></slot>
                 </ul>
             </div>
@@ -13,7 +13,7 @@
         </template>
         <template v-else>
             <slot></slot>
-            <ul class="ysyz-list-item-action" v-if="this.$slots.action">
+            <ul class="ysyz-list-item-action" v-if="mySlot.action">
                 <slot name="action"></slot>
             </ul>
             <div class="ysyz-list-item-extra">

@@ -85,7 +85,7 @@ const error = () => {
   errorState.value = true;
   toend();
 };
-const config = (value: object) => {
+const config = (value :any) => {
   if (value.hasOwnProperty("errorColor")) reviseErrorColor(value["errorColor"]);
 
   if (value.hasOwnProperty("color")) revisePrimaryColor(value["color"]);

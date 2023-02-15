@@ -107,7 +107,7 @@ const slotStyle = computed(() => {
 		translateX = props.offset[0];
 		translateY = props.offset[1];
 	} else return {};
-	let rnt = {
+	let rnt:any = {
 		transform: `translateX(${translateX}px) translateY(${translateY}px)`
 	}
 	if (slotIndex.value > 1)

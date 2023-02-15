@@ -1,6 +1,6 @@
 <template>
     <li class="ysyz-breadcrumb-item">
-      <a class="ysyz-breadcrumb-item__link" :href="to" @click="handleClick" v-if="to">
+      <a class="ysyz-breadcrumb-item__link"  @click="handleClick" v-if="to">
         <slot></slot>
       </a>
       <span class="ysyz-breadcrumb-item__span" v-else>
@@ -13,13 +13,13 @@
     </li>
   </template>
   
-  <script >
+  <script lang="ts">
   export default {
     name: "ysyz-breadcrumb-item"
   };
   </script>
   
-  <script setup>
+  <script setup lang="ts">
   import { inject } from 'vue';
   import { useRouter } from 'vue-router';
   
@@ -30,12 +30,12 @@
   })
   
   const router = useRouter()
-  const breadcrumbKey = inject('breadcrumbKey')
+  const breadcrumbKey:any = inject('breadcrumbKey')
   const { separator,separatorClass } = breadcrumbKey
   
-  const handleClick = (e) => {
-    event.preventDefault();
-    router.push(props.to)
+  const handleClick = (e:any) => {
+    // event.preventDefault();
+    // router.push(props.to)
   }
   </script>
   

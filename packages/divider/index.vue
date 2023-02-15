@@ -8,7 +8,7 @@
     <!-- 当分割线为水平的时候，且插槽有内容的时候，才渲染对应数据 -->
     <!-- slots()方法返回插槽数据对象，default为默认插槽；相当于this.$slots.default。本系列文章中仿写一个el-tabs 也提到了此知识点  -->
     <div
-      v-if="direction === 'horizontal' && this.$slots.default"
+      v-if="direction === 'horizontal' && mySlot.default"
       :class="['text', contentPosition]"
     >
       <slot />
@@ -26,6 +26,9 @@ export default {
 
 
 <script setup lang="ts">
+import { useSlots } from 'vue';
+
+const mySlot = useSlots()
 const props = defineProps({
   static: {
     type: String,
@@ -34,7 +37,7 @@ const props = defineProps({
   direction: {
       type: String,
       default: "horizontal",
-      validator(val) {
+      validator(val:any) {
         return ["horizontal", "vertical"].includes(val);
       },
   },
@@ -42,7 +45,7 @@ const props = defineProps({
   contentPosition: {
       type: String,
       default: "center",
-      validator(val) {
+      validator(val:any) {
         return ["left", "center", "right"].includes(val);
       },
   },
@@ -50,7 +53,7 @@ const props = defineProps({
   lineType: {
       type: String,
       default: "solid",
-      validator(val) {
+      validator(val:any) {
         return ["solid", "dashed", "dotted"].includes(val) ;
       },
   },

@@ -4,7 +4,7 @@
 	</div>
   </template>
   
-  <script>
+  <script lang="ts">
   import {computed, inject, ref} from 'vue'
   export default {
 	name: 'ysyz-col',
@@ -34,7 +34,7 @@
 	setup(props) {
 	  const widthRef = ref(props.span<=24?props.span%1==0?(100/24)*props.span+'%':'':'')
 	  const offsetRef = ref(props.offset<=24?props.offset%1==0?(100/24)*props.offset+'%':'':'')
-	  const gutter = inject('gutter')
+	  const gutter:any = inject('gutter')
 
 	  const styles = computed(() => {
 		return {
